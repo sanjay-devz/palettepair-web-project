@@ -4,10 +4,8 @@
     const $ = (selector, context = document) => context.querySelector(selector);
     const burger = $('#burger');
     const menu = $('#menu');
-    const visual = $('#visual');
     const label = $('#paletteLabel');
     const links = [...document.querySelectorAll('.links a')];
-    const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     // Mobile navigation menu toggle
     const setMenu = open => {
@@ -72,30 +70,9 @@
                 label.textContent = `${hex} copied!`;
                 clearTimeout(feedbackTimer);
                 feedbackTimer = setTimeout(() => {
-                    label.textContent = 'Your Palette';
+                    label.textContent = 'Our Palette';
                 }, 1600);
             }
         });
     });
-
-    // 3D ribbon interactive mouse parallax (desktop only)
-    if (!reduceMotion && visual && matchMedia('(hover: hover)').matches) {
-        window.addEventListener('mousemove', e => {
-            const px = ((e.clientX / window.innerWidth - 0.5) * 16).toFixed(1) + 'px';
-            const py = ((e.clientY / window.innerHeight - 0.5) * 12).toFixed(1) + 'px';
-            visual.style.setProperty('--px', px);
-            visual.style.setProperty('--py', py);
-        });
-    }
-
-    // Smooth scroll button
-    const scrollBtn = $('#scrollBtn');
-    if (scrollBtn) {
-        scrollBtn.addEventListener('click', () => {
-            window.scrollBy({
-                top: window.innerHeight * 0.85,
-                behavior: reduceMotion ? 'auto' : 'smooth'
-            });
-        });
-    }
 })();

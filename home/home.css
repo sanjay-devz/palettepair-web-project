@@ -64,42 +64,10 @@ button {
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
-    background: var(--cream);
+    background: var(--cream) url('card-bg.jpg') no-repeat center center;
+    background-size: cover;
     border-radius: clamp(22px, 2.4vw, 36px);
     box-shadow: 0 16px 60px rgba(45, 35, 65, 0.07);
-}
-
-/* Ambient soft background glow shapes */
-.blob {
-    position: absolute;
-    border-radius: 50%;
-    pointer-events: none;
-}
-
-.b1 {
-    width: 46%;
-    aspect-ratio: 1;
-    top: -22%;
-    right: -10%;
-    background: radial-gradient(circle, rgba(220, 228, 247, 0.95) 0%, rgba(220, 228, 247, 0) 68%);
-    opacity: 0.9;
-}
-
-.b2 {
-    width: 38%;
-    aspect-ratio: 1;
-    bottom: -18%;
-    left: -8%;
-    background: radial-gradient(circle, rgba(216, 226, 246, 0.9) 0%, rgba(216, 226, 246, 0) 70%);
-    opacity: 0.85;
-}
-
-.b3 {
-    width: 48%;
-    aspect-ratio: 1;
-    bottom: -26%;
-    left: 32%;
-    background: radial-gradient(circle, rgba(232, 216, 249, 0.75) 0%, rgba(255, 255, 255, 0) 65%);
 }
 
 /* Header Navigation */
@@ -113,20 +81,22 @@ button {
 }
 
 .logo {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 800;
-    font-size: clamp(28px, 2.7vw, 38px);
-    letter-spacing: -0.02em;
+    display: inline-flex;
+    align-items: center;
     line-height: 1;
-    background: linear-gradient(90deg, #2b6ce6 0%, #7d57d7 48%, #f8741e 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    transition: opacity 0.2s;
+    transition: opacity 0.2s, transform 0.2s;
 }
 
 .logo:hover {
     opacity: 0.9;
+    transform: scale(1.02);
+}
+
+.logo-img {
+    height: clamp(28px, 2.8vw, 38px);
+    width: auto;
+    object-fit: contain;
+    display: block;
 }
 
 .links {
@@ -170,13 +140,13 @@ button {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 10px 22px;
-    border: 1px solid rgba(27, 44, 74, 0.32);
+    padding: 9px 22px;
+    border: 1px solid rgba(27, 44, 74, 0.35);
     border-radius: 999px;
     font-size: clamp(14px, 1.05vw, 16px);
     font-weight: 500;
     color: var(--navy);
-    transition: background 0.2s, border-color 0.2s;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
 }
 
 .btn-outline svg {
@@ -185,7 +155,8 @@ button {
 
 .btn-outline:hover {
     background: rgba(27, 44, 74, 0.05);
-    border-color: rgba(27, 44, 74, 0.5);
+    border-color: rgba(27, 44, 74, 0.55);
+    transform: translateY(-1px);
 }
 
 .btn-outline:hover svg {
@@ -234,7 +205,7 @@ button {
     z-index: 2;
     flex: 1;
     display: grid;
-    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.15fr);
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
     align-items: center;
     padding: 0 0 0 var(--pad);
 }
@@ -280,21 +251,19 @@ h1 {
 .actions {
     display: flex;
     align-items: center;
-    gap: clamp(18px, 2.2vw, 32px);
     margin-top: clamp(28px, 3.2vw, 44px);
-    flex-wrap: wrap;
 }
 
 .btn-dark {
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    padding: 0 30px;
-    height: clamp(50px, 4.2vw, 58px);
+    padding: 0 28px;
+    height: clamp(48px, 4.2vw, 56px);
     border-radius: 999px;
     background: #162235;
     color: #ffffff;
-    font-size: clamp(15px, 1.15vw, 17px);
+    font-size: clamp(14px, 1.1vw, 16px);
     font-weight: 500;
     transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
 }
@@ -313,100 +282,43 @@ h1 {
     transform: translateX(3px);
 }
 
-.demo {
-    display: inline-flex;
-    align-items: center;
-    gap: 14px;
-    font-size: clamp(15px, 1.15vw, 17px);
-    font-weight: 500;
-    color: #2e3b4e;
-    transition: color 0.2s;
-}
-
-.demo:hover {
-    color: var(--navy);
-}
-
-.play {
-    display: grid;
-    place-items: center;
-    width: clamp(44px, 3.8vw, 50px);
-    aspect-ratio: 1;
-    border: 1px solid rgba(27, 44, 74, 0.22);
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.45);
-    color: var(--navy);
-    padding-left: 2px;
-    transition: background 0.2s, transform 0.2s, border-color 0.2s;
-}
-
-.demo:hover .play {
-    background: rgba(255, 255, 255, 0.85);
-    transform: scale(1.05);
-    border-color: rgba(27, 44, 74, 0.4);
-}
-
 /* Hero Visual Art Section */
 .visual {
     position: relative;
     align-self: stretch;
-    min-height: clamp(420px, 44vw, 680px);
+    min-height: clamp(380px, 42vw, 620px);
     display: flex;
     align-items: center;
     justify-content: flex-end;
     overflow: visible;
-    --px: 0px;
-    --py: 0px;
-}
-
-.float {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    animation: drift 9s ease-in-out infinite;
-    pointer-events: none;
-}
-
-.hero-ribbon-img {
-    width: 100%;
-    max-width: 720px;
-    height: 100%;
-    object-fit: contain;
-    object-position: right center;
-    transform: translate(var(--px), var(--py));
-    transition: transform 0.35s ease-out;
-    filter: drop-shadow(0 20px 30px rgba(90, 70, 160, 0.12));
-    user-select: none;
-    -webkit-user-drag: none;
 }
 
 /* Floating interactive Palette Card */
 .palette-card {
     position: absolute;
-    right: 3.5%;
-    top: 42%;
-    width: clamp(170px, 15vw, 226px);
+    right: 4.5%;
+    top: 44%;
+    width: clamp(160px, 15vw, 215px);
     padding: clamp(14px, 1.3vw, 18px) clamp(16px, 1.5vw, 22px);
     border-radius: 18px;
-    background: rgba(255, 252, 248, 0.82);
+    background: rgba(255, 252, 248, 0.84);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    border: 1px solid rgba(255, 255, 255, 0.65);
-    box-shadow: 0 10px 32px rgba(65, 50, 110, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 10px 32px rgba(65, 50, 110, 0.1);
     z-index: 4;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .palette-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 14px 40px rgba(65, 50, 110, 0.16);
+    box-shadow: 0 14px 40px rgba(65, 50, 110, 0.14);
 }
 
 .dots {
     display: flex;
-    gap: clamp(10px, 1vw, 16px);
+    gap: clamp(12px, 1.2vw, 18px);
+    justify-content: center;
 }
 
 .dot {
@@ -431,6 +343,7 @@ h1 {
     font-weight: 500;
     color: #4b5463;
     letter-spacing: 0.01em;
+    text-align: center;
     transition: color 0.2s;
 }
 
@@ -445,7 +358,7 @@ h1 {
 }
 
 .rule {
-    width: 48px;
+    width: 58px;
     height: 1px;
     background: rgba(27, 44, 74, 0.35);
 }
@@ -459,45 +372,6 @@ h1 {
     color: #3b4657;
 }
 
-.scroll {
-    margin-left: auto;
-    display: grid;
-    place-items: center;
-    width: 32px;
-    height: 46px;
-    border: 1px solid rgba(27, 44, 74, 0.35);
-    border-radius: 16px;
-    color: var(--navy);
-    background: transparent;
-    transition: background 0.2s, border-color 0.2s, transform 0.2s;
-}
-
-.scroll:hover {
-    background: rgba(27, 44, 74, 0.06);
-    border-color: rgba(27, 44, 74, 0.6);
-    transform: translateY(2px);
-}
-
-/* Animation keyframes */
-@keyframes drift {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .float {
-        animation: none;
-    }
-
-    .hero-ribbon-img {
-        transition: none;
-    }
-}
-
 /* Responsive: Tablet and Mobile */
 @media (max-width: 900px) {
     .nav {
@@ -507,7 +381,7 @@ h1 {
 
     .btn-outline {
         margin-left: auto;
-        padding: 9px 18px;
+        padding: 8px 18px;
     }
 
     .burger {
@@ -559,20 +433,17 @@ h1 {
     }
 
     .visual {
-        min-height: 0;
-        aspect-ratio: 1 / 0.9;
-        margin-top: 10px;
+        min-height: 220px;
+        margin-top: 20px;
         width: 100%;
         justify-content: center;
     }
 
-    .hero-ribbon-img {
-        object-position: center;
-    }
-
     .palette-card {
-        top: 48%;
-        right: 6%;
+        position: relative;
+        right: auto;
+        top: auto;
+        margin: 20px auto;
         width: clamp(160px, 44vw, 215px);
     }
 }
@@ -587,7 +458,7 @@ h1 {
     }
 
     .rule {
-        width: 28px;
+        width: 32px;
     }
 
     .tag {
