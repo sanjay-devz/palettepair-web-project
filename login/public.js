@@ -5,10 +5,10 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 const firebaseApp = initializeApp({
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyAazpvji1_eOk9koOv2qaNrVAN8rt5CKcA",
+  authDomain: "palettepair-project.firebaseapp.com",
+  projectId: "palettepair-project",
+  appId: "1:666061658375:web:a90f758df9827fd02e4da2"
 });
 const auth = getAuth(firebaseApp);
 
