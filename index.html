@@ -16,7 +16,7 @@
     <header class="topbar">
       <a class="brand" href="#home" aria-label="LUA home"><span class="brand-mark">L</span><span class="brand-mark brand-mark-u">U</span><span class="brand-mark brand-mark-a">A</span></a>
       <nav class="main-nav" aria-label="Main navigation">
-        <a href="#discover" data-route="discover">Explore</a><a href="#theory" data-route="theory">Color theory</a><a href="#about" data-route="about">About</a>
+        <a href="#discover" data-route="discover">Explore</a><a href="#discover" data-route="discover">Color theory</a><a href="#about" data-route="about">About</a>
       </nav>
       <a class="button button-dark nav-cta" href="#studio">Get started <span>⟶</span></a>
       <button class="menu-toggle" aria-label="Open menu">☰</button>
@@ -46,16 +46,6 @@
         </div>
       </section>
 
-      <section class="page theory-page" id="theory" data-page="theory">
-        <div class="page-heading"><p class="eyebrow">02 / LEARN</p><h2>Good design<br>has <em>harmony.</em></h2><p>A few simple relationships help colors feel like they belong together.</p></div>
-        <div class="theory-grid">
-          <article class="theory-card card"><div class="theory-art comp-art"><i></i><i></i><i></i></div><span class="theory-number">01</span><h3>Complementary</h3><p>Opposites on the wheel create energy and bold contrast. Great for calls to action.</p><button class="text-button apply-harmony" data-harmony="complementary">Try this harmony ⟶</button></article>
-          <article class="theory-card card"><div class="theory-art analog-art"><i></i><i></i><i></i></div><span class="theory-number">02</span><h3>Analogous</h3><p>Neighboring hues build a calm, cohesive palette with a natural sense of flow.</p><button class="text-button apply-harmony" data-harmony="analogous">Try this harmony ⟶</button></article>
-          <article class="theory-card card"><div class="theory-art triad-art"><i></i><i></i><i></i></div><span class="theory-number">03</span><h3>Triadic</h3><p>Three evenly spaced colors bring playful balance and plenty of room to explore.</p><button class="text-button apply-harmony" data-harmony="triadic">Try this harmony ⟶</button></article>
-        </div>
-        <div class="tip-banner"><span>✳</span><p><strong>A little design tip</strong><br>Pick one color to lead, one to support, and one to add a small spark.</p><a href="#studio">Build a palette ⟶</a></div>
-      </section>
-
       <section class="page studio-page" id="studio" data-page="studio">
         <div class="studio-header"><p class="eyebrow">03 / PLAYGROUND</p><h2>Colors. Fonts. <em>Perfectly</em> paired.</h2><p>Make it yours. Every change updates the preview instantly.</p></div>
         <div class="studio-layout">
@@ -66,7 +56,17 @@
         </div>
       </section>
 
-      <section class="page about-page" id="about" data-page="about"><div class="about-orb"></div><p class="eyebrow">A NOTE FROM LUA</p><h2>Make space<br>for <em>play.</em></h2><p class="about-text">Color can feel like the hardest part of starting. LUA makes it a little easier to experiment, find unexpected pairings, and trust your eye along the way.</p><a class="button button-dark" href="#discover">Find your next palette <span>⟶</span></a><div class="about-bottom"><span>Made for people who make things.</span><span>Color outside the lines. © 2026</span></div></section>
+      <section class="page about-page" id="about" data-page="about">
+        <p class="eyebrow">A NOTE FROM LUA</p><h2>About LUA</h2>
+        <div class="about-grid">
+          <article class="about-card harmony-card"><span class="about-spark">✳</span><p class="about-card-kicker">DESIGN BEGINS WITH HARMONY</p><p>A little color, the right typography, and a whole new visual experience.</p><div class="about-mini-wheel"><i></i><i></i></div></article>
+          <article class="about-card lua-card"><span class="about-index">01 / ABOUT LUA</span><h3>What is LUA?</h3><p>LUA is a creative tool designed to help UI/UX designers discover beautiful color combinations and font pairings. It brings color and typography together to make the design process simpler and more inspiring.</p></article>
+          <article class="about-card purpose-card"><span class="about-index">02 / WHY WE’RE HERE</span><h3>Our purpose</h3><p>We believe great design is not just about choosing colors. It’s about creating balance, readability, and visual harmony.</p></article>
+          <div class="about-developer"><span>Developed by</span><strong>Shafika Fathima</strong><small>UI/UX, frontend development, concept &amp; visual design</small></div>
+          <article class="about-card explore-card"><span class="about-index">03 / MAKE SOMETHING</span><h3>What can you explore?</h3><div class="about-features"><div><strong>Colour harmony</strong><span>Discover complementary color combinations.</span></div><div><strong>Typography</strong><span>Explore fonts that work beautifully together.</span></div><div><strong>Live preview</strong><span>See your design choices in action.</span></div><div><strong>Creative inspiration</strong><span>Find fresh ideas for your next project.</span></div></div></article>
+        </div>
+        <div class="about-credit"><span>Made for people who make things.</span></div>
+      </section>
     </main>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
   </div>
