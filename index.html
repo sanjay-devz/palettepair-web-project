@@ -1,79 +1,75 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>LUA – Every Colour Has a Story</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="./home/home.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#fff5ee" />
+  <meta name="description" content="Find thoughtful color and font pairings for your next design." />
+  <title>LUA — Color outside the lines</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-    <div class="page">
-        <main class="card">
-            <!-- Navigation header -->
-            <header class="nav">
-                <a class="logo" href="#" aria-label="LUA home">
-                    <img src="./home/logo.png" alt="LUA" class="logo-img" width="130" height="44" />
-                </a>
-                <nav class="links" id="menu" aria-label="Main">
-                    <a href="./" class="active">Home</a>
-                    <a href="./palette_pair/index.html">Palette</a>
-                    <a href="./palette_pair/index.html#contrast-title">Color Wheel</a>
-                </nav>
-                <a class="btn-outline" href="./login/public.html">Login
-                    <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4"
-                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M3 11 11 3M5 3h6v6" />
-                    </svg>
-                </a>
-                <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"
-                    aria-controls="menu"><span></span><span></span></button>
-            </header>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="LUA home"><span class="brand-mark">L</span><span class="brand-mark brand-mark-u">U</span><span class="brand-mark brand-mark-a">A</span></a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#discover" data-route="discover">Explore</a><a href="#theory" data-route="theory">Color theory</a><a href="#about" data-route="about">About</a>
+      </nav>
+      <a class="button button-dark nav-cta" href="#studio">Get started <span>⟶</span></a>
+      <button class="menu-toggle" aria-label="Open menu">☰</button>
+    </header>
 
-            <!-- Hero section -->
-            <section class="hero">
-                <div class="copy">
-                    <h1>EVERY<br><span class="grad">COLOUR</span> HAS<br>A STORY.<br>CREATE YOURS.</h1>
-                    <p class="sub">Discover. Mix. Be Inspired<br>with LUA.</p>
-                    <div class="actions">
-                        <a class="btn-dark" href="./palette_pair/index.html">Start Exploring
-                            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor"
-                                stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="M2 8h12M9 3l5 5-5 5" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
+    <main>
+      <section class="page hero-page is-active" id="home" data-page="home">
+        <div class="hero-art art-orb orb-pink"></div><div class="hero-art art-orb orb-lilac"></div><div class="hero-art art-orb orb-mint"></div><div class="hero-art art-orb orb-peach"></div>
+        <div class="hero-copy">
+          <p class="eyebrow">A creative colour playground</p>
+          <h1>Colour<br>outside<br><em>the lines.</em></h1>
+          <p class="hero-sub">A creative colour playground<br>for UI/UX designers.</p>
+          <a class="button button-dark hero-button" href="#discover">Explore colours <span>⟶</span></a>
+        </div>
+        <div class="hero-wheel-card"><div class="mini-wheel"><div class="wheel-center">LUA<br><small>COLOR LAB</small></div><span class="wheel-pointer"></span></div><span class="float-swatch swatch-one"></span><span class="float-swatch swatch-two"></span></div>
+        <div class="hero-note">Find your<br>next favorite<br>shade <span>✳</span></div>
+      </section>
 
-                <div class="visual" id="visual">
-                    <div class="palette-card" id="palette">
-                        <div class="dots">
-                            <button class="dot" data-hex="#1C84D9" style="background:#1c84d9"
-                                aria-label="Copy #1C84D9" title="Copy #1C84D9"></button>
-                            <button class="dot" data-hex="#AB55F8" style="background:#ab55f8"
-                                aria-label="Copy #AB55F8" title="Copy #AB55F8"></button>
-                            <button class="dot" data-hex="#FF7E2B" style="background:#ff7e2b"
-                                aria-label="Copy #FF7E2B" title="Copy #FF7E2B"></button>
-                        </div>
-                        <p id="paletteLabel">Our Palette</p>
-                    </div>
-                </div>
-            </section>
+      <section class="page discover-page" id="discover" data-page="discover">
+        <div class="page-heading"><p class="eyebrow">01 / DISCOVER</p><h2>Find the<br>perfect <em>match.</em></h2><p>Enter a color and let LUA generate its complementary palette instantly.</p></div>
+        <div class="discover-workspace">
+          <div class="wheel-panel card"><div class="panel-top"><span>COLOR HARMONY</span><label class="select-wrap"><span class="sr-only">Color harmony</span><select id="harmony"><option value="complementary">Complementary colour</option><option value="analogous">Analogous colours</option><option value="triadic">Triadic colours</option><option value="split">Split complementary</option></select></label></div>
+            <div class="color-wheel" id="colorWheel" role="slider" tabindex="0" aria-label="Choose a hue"><div class="wheel-hole"></div><div class="wheel-line"></div><div class="wheel-knob"></div></div>
+            <div class="color-entry"><input type="color" id="baseColor" value="#a86dd6" aria-label="Choose base color"><input id="hexInput" value="#A86DD6" maxlength="7" aria-label="Hex color"><button class="button button-dark" id="findMatch">Find match <span>⟶</span></button></div>
+          </div>
+          <aside class="results-panel card"><div class="results-head"><div><p class="eyebrow">YOUR PALETTE</p><h3>Harmony, in color.</h3></div><button class="icon-button" id="randomize" title="Generate a random palette" aria-label="Generate a random palette">⤨</button></div><div class="swatches" id="swatches"></div><div class="palette-meta"><span id="harmonyLabel">Complementary palette</span><button class="text-button" id="copyPalette">Copy all codes</button></div><div class="contrast-label">ACCESSIBLE PAIRING <span id="contrastRatio">—</span></div><div class="contrast-preview" id="contrastPreview"><strong>Readable by design</strong><span>Contrast checked against your base color</span></div><a class="button button-outline full-button" href="#studio">Open in studio <span>⟶</span></a></aside>
+        </div>
+      </section>
 
-            <!-- Bottom footer -->
-            <footer class="foot">
-                <span class="rule" aria-hidden="true"></span>
-                <span class="tag">IMAGINE &bull; EXPLORE &bull; CREATE</span>
-            </footer>
-        </main>
-    </div>
-    <script src="./home/home.js"></script>
+      <section class="page theory-page" id="theory" data-page="theory">
+        <div class="page-heading"><p class="eyebrow">02 / LEARN</p><h2>Good design<br>has <em>harmony.</em></h2><p>A few simple relationships help colors feel like they belong together.</p></div>
+        <div class="theory-grid">
+          <article class="theory-card card"><div class="theory-art comp-art"><i></i><i></i><i></i></div><span class="theory-number">01</span><h3>Complementary</h3><p>Opposites on the wheel create energy and bold contrast. Great for calls to action.</p><button class="text-button apply-harmony" data-harmony="complementary">Try this harmony ⟶</button></article>
+          <article class="theory-card card"><div class="theory-art analog-art"><i></i><i></i><i></i></div><span class="theory-number">02</span><h3>Analogous</h3><p>Neighboring hues build a calm, cohesive palette with a natural sense of flow.</p><button class="text-button apply-harmony" data-harmony="analogous">Try this harmony ⟶</button></article>
+          <article class="theory-card card"><div class="theory-art triad-art"><i></i><i></i><i></i></div><span class="theory-number">03</span><h3>Triadic</h3><p>Three evenly spaced colors bring playful balance and plenty of room to explore.</p><button class="text-button apply-harmony" data-harmony="triadic">Try this harmony ⟶</button></article>
+        </div>
+        <div class="tip-banner"><span>✳</span><p><strong>A little design tip</strong><br>Pick one color to lead, one to support, and one to add a small spark.</p><a href="#studio">Build a palette ⟶</a></div>
+      </section>
+
+      <section class="page studio-page" id="studio" data-page="studio">
+        <div class="studio-header"><p class="eyebrow">03 / PLAYGROUND</p><h2>Colors. Fonts. <em>Perfectly</em> paired.</h2><p>Make it yours. Every change updates the preview instantly.</p></div>
+        <div class="studio-layout">
+          <section class="preview-panel card"><div class="preview-tabs"><button class="preview-tab active" data-preview="landing">Landing page</button><button class="preview-tab" data-preview="mobile">Mobile</button><button class="preview-tab" data-preview="article">Article</button><span class="preview-live"><i></i> LIVE PREVIEW</span></div><div class="live-canvas" id="liveCanvas"><div class="mock-nav"><span class="mock-logo">studio<span>.</span></span><span>Work　 About　 Contact</span><button>Let’s talk ↗</button></div><div class="mock-content"><div class="mock-copy"><span class="mock-kicker">DESIGN THAT FEELS LIKE YOU</span><h3 id="mockTitle">Make room<br>for <em>good ideas.</em></h3><p id="mockBody">Thoughtful digital experiences, made to bring your next big idea to life.</p><button class="mock-button">Explore our work ↗</button></div><div class="mock-image"><div class="mock-shape shape-a"></div><div class="mock-shape shape-b"></div><span class="mock-sticker">Good<br>things<br>grow here ✳</span></div></div><div class="mock-footer"><span>Independent design studio</span><span>Scroll to explore ↓</span></div></div></section>
+          <aside class="controls-panel card"><div class="control-block"><div class="control-title"><h3>Design</h3><span>01</span></div><p class="control-subtitle">Harmony & colour</p><div class="control-colors" id="controlColors"></div><label class="control-label" for="studioColor">Base colour</label><div class="input-combo"><input type="color" id="studioColor" value="#a86dd6"><input id="studioHex" value="#A86DD6" maxlength="7"><button id="shuffleColor" aria-label="Random color">⤨</button></div></div>
+            <div class="control-block"><div class="control-title"><h3>Typography</h3><span>02</span></div><p class="control-subtitle">Make words feel right</p><label class="control-label" for="headingFont">Heading font</label><select id="headingFont"><option value="Playfair Display">Playfair Display</option><option value="DM Sans">DM Sans</option><option value="Space Grotesk">Space Grotesk</option><option value="Georgia">Georgia</option></select><label class="control-label" for="bodyFont">Body font</label><select id="bodyFont"><option value="DM Sans">DM Sans</option><option value="Playfair Display">Playfair Display</option><option value="Space Grotesk">Space Grotesk</option><option value="Arial">Arial</option></select><div class="font-size-row"><label class="control-label" for="fontSize">Type size <strong id="fontSizeValue">42px</strong></label><input type="range" id="fontSize" min="32" max="58" value="42"></div><div class="font-style-row"><span>Style</span><button class="style-choice active" data-style="normal">Aa</button><button class="style-choice italic" data-style="italic">Aa</button><button class="style-choice bold" data-style="bold">Aa</button><button class="text-button copy-css" id="copyCss">Copy CSS</button></div></div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="page about-page" id="about" data-page="about"><div class="about-orb"></div><p class="eyebrow">A NOTE FROM LUA</p><h2>Make space<br>for <em>play.</em></h2><p class="about-text">Color can feel like the hardest part of starting. LUA makes it a little easier to experiment, find unexpected pairings, and trust your eye along the way.</p><a class="button button-dark" href="#discover">Find your next palette <span>⟶</span></a><div class="about-bottom"><span>Made for people who make things.</span><span>Color outside the lines. © 2026</span></div></section>
+    </main>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </div>
+  <script src="script.js"></script>
 </body>
-
 </html>
