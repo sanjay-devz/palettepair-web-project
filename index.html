@@ -1,76 +1,69 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#fff5ee" />
-  <meta name="description" content="Find thoughtful color and font pairings for your next design." />
-  <title>LUA — Color outside the lines</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Study Buddy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="index.css">
 </head>
 <body>
-  <div class="site-shell">
-    <header class="topbar">
-      <a class="brand" href="#home" aria-label="LUA home"><span class="brand-mark">L</span><span class="brand-mark brand-mark-u">U</span><span class="brand-mark brand-mark-a">A</span></a>
-      <nav class="main-nav" aria-label="Main navigation">
-        <a href="#discover" data-route="discover">Explore</a><a href="#discover" data-route="discover">Color theory</a><a href="#about" data-route="about">About</a>
-      </nav>
-      <a class="button button-dark nav-cta" href="#studio">Get started <span>⟶</span></a>
-      <button class="menu-toggle" aria-label="Open menu">☰</button>
-    </header>
+<div class="app">
+  <aside class="left">
+    <div class="brand"><h1>Study Buddy</h1><button class="icon-btn" id="newChatIcon" aria-label="New chat">＋</button></div>
+    <button class="new-chat" id="newChat">＋ &nbsp; New Chat</button>
+    <section class="history">
+      <p class="label">Today</p>
+      <div id="todayChats" class="chat-list">
+        <button class="chat active">Newton's Laws Explained <small>10:24 AM</small></button>
+        <button class="chat">College Physics Notes <small>Yesterday</small></button>
+        <button class="chat">Photosynthesis Summary <small>Yesterday</small></button>
+        <button class="chat">Machine Learning Basics <small>2 days ago</small></button>
+      </div>
+      <div class="rule"></div><p class="label">Last 7 days</p>
+      <div class="chat-list">
+        <button class="chat">Thermodynamics Overview <small>3 days ago</small></button>
+        <button class="chat">Marketing Strategy Guide <small>4 days ago</small></button>
+        <button class="chat">Human Anatomy Revision <small>5 days ago</small></button>
+        <button class="chat">Linear Algebra Concepts <small>6 days ago</small></button>
+        <button class="chat">Economics Chapter 1 <small>7 days ago</small></button>
+      </div>
+      <button class="view-all">View all chats <span>›</span></button>
+    </section>
+    <button class="clear-history" id="clearHistory">▤ &nbsp; Clear chat history</button>
+  </aside>
 
-    <main>
-      <section class="page hero-page is-active" id="home" data-page="home">
-        <div class="hero-art art-orb orb-pink"></div><div class="hero-art art-orb orb-lilac"></div><div class="hero-art art-orb orb-mint"></div><div class="hero-art art-orb orb-peach"></div>
-        <div class="hero-copy">
-          <p class="eyebrow">A creative colour playground</p>
-          <h1>Colour<br>outside<br><em>the lines.</em></h1>
-          <p class="hero-sub">A creative colour playground<br>for UI/UX designers.</p>
-          <a class="button button-dark hero-button" href="#discover">Explore colours <span>⟶</span></a>
-        </div>
-        <div class="hero-wheel-card"><div class="mini-wheel"><div class="wheel-center">LUA<br><small>COLOR LAB</small></div><span class="wheel-pointer"></span></div><span class="float-swatch swatch-one"></span><span class="float-swatch swatch-two"></span></div>
-        <div class="hero-note">Find your<br>next favorite<br>shade <span>✳</span></div>
-      </section>
+  <main class="center">
+    <section class="welcome" id="welcome">
+      <h2>Hello, Sanjay</h2><p>Your AI research assistant for deeper understanding.</p>
+      <button class="upload" id="uploadButton"><svg viewBox="0 0 24 24"><path d="M12 16V4m0 0L7 9m5-5 5 5M4 15v5h16v-5"/></svg>Upload sources</button>
+      <p class="help">Upload documents to ask questions and get insights</p>
+      <p class="formats">Supported formats: PDF, DOCX, TXT, MD</p>
+    </section>
 
-      <section class="page discover-page" id="discover" data-page="discover">
-        <div class="page-heading"><p class="eyebrow">01 / DISCOVER</p><h2>Find the<br>perfect <em>match.</em></h2><p>Enter a color and let LUA generate its complementary palette instantly.</p></div>
-        <div class="discover-workspace">
-          <div class="wheel-panel card"><div class="panel-top"><span>COLOR HARMONY</span><label class="select-wrap"><span class="sr-only">Color harmony</span><select id="harmony"><option value="complementary">Complementary colour</option><option value="analogous">Analogous colours</option><option value="triadic">Triadic colours</option><option value="split">Split complementary</option></select></label></div>
-            <div class="color-wheel" id="colorWheel" role="slider" tabindex="0" aria-label="Choose a hue"><div class="wheel-hole"></div><div class="wheel-line"></div><div class="wheel-knob"></div></div>
-            <div class="color-entry"><input type="color" id="baseColor" value="#a86dd6" aria-label="Choose base color"><input id="hexInput" value="#A86DD6" maxlength="7" aria-label="Hex color"><button class="button button-dark" id="findMatch">Find match <span>⟶</span></button></div>
-          </div>
-          <aside class="results-panel card"><div class="results-head"><div><p class="eyebrow">YOUR PALETTE</p><h3>Harmony, in color.</h3></div><button class="icon-button" id="randomize" title="Generate a random palette" aria-label="Generate a random palette">⤨</button></div><div class="swatches" id="swatches"></div><div class="palette-meta"><span id="harmonyLabel">Complementary palette</span><button class="text-button" id="copyPalette">Copy all codes</button></div><div class="contrast-label">ACCESSIBLE PAIRING <span id="contrastRatio">—</span></div><div class="contrast-preview" id="contrastPreview"><strong>Readable by design</strong><span>Contrast checked against your base color</span></div><a class="button button-outline full-button" href="#studio">Open in studio <span>⟶</span></a></aside>
-        </div>
-      </section>
+    <section class="quiz" id="quiz" hidden>
+      <div class="quiz-head"><div><span class="eyebrow">PRACTICE MODE · DEMO</span><h2>Quick Knowledge Check</h2><p>This is a predefined sample quiz to demonstrate the interface.</p></div><button class="plain-btn" id="newPrompt">New prompt</button></div>
+      <div class="progress-card">
+        <div class="progress-label"><span id="answeredLabel">0 of 5 answered</span><b id="percentLabel">0%</b></div>
+        <div class="track"><div id="progressFill"></div></div>
+        <div class="progress-bottom"><span id="remainingLabel">5 remaining</span><span id="correctLabel">0 correct</span></div>
+      </div>
+      <div id="questions" class="questions"></div>
+      <div class="complete" id="complete" hidden><b>You've completed this practice set!</b><p id="score"></p><button class="upload small" id="retry">Try again</button></div>
+    </section>
+    <div class="prompt-log" id="promptLog"></div>
+    <form class="composer" id="chatForm"><textarea id="chatInput" rows="1" placeholder="Ask anything..." aria-label="Ask anything"></textarea><button class="send" aria-label="Send" type="submit"><svg viewBox="0 0 24 24"><path d="m5 12 14-7-5 14-2-6-7-1Z"/></svg></button></form>
+  </main>
 
-      <section class="page studio-page" id="studio" data-page="studio">
-        <div class="studio-header"><p class="eyebrow">03 / PLAYGROUND</p><h2>Colors. Fonts. <em>Perfectly</em> paired.</h2><p>Make it yours. Every change updates the preview instantly.</p></div>
-        <div class="studio-layout">
-          <section class="preview-panel card"><div class="preview-tabs"><button class="preview-tab active" data-preview="landing">Landing page</button><button class="preview-tab" data-preview="mobile">Mobile</button><button class="preview-tab" data-preview="article">Article</button><span class="preview-live"><i></i> LIVE PREVIEW</span></div><div class="live-canvas" id="liveCanvas"><div class="mock-nav"><span class="mock-logo">studio<span>.</span></span><span>Work　 About　 Contact</span><button>Let’s talk ↗</button></div><div class="mock-content"><div class="mock-copy"><span class="mock-kicker">DESIGN THAT FEELS LIKE YOU</span><h3 id="mockTitle">Make room<br>for <em>good ideas.</em></h3><p id="mockBody">Thoughtful digital experiences, made to bring your next big idea to life.</p><button class="mock-button">Explore our work ↗</button></div><div class="mock-image"><div class="mock-shape shape-a"></div><div class="mock-shape shape-b"></div><span class="mock-sticker">Good<br>things<br>grow here ✳</span></div></div><div class="mock-footer"><span>Independent design studio</span><span>Scroll to explore ↓</span></div></div></section>
-          <aside class="controls-panel card"><div class="control-block"><div class="control-title"><h3>Design</h3><span>01</span></div><p class="control-subtitle">Harmony & colour</p><div class="control-colors" id="controlColors"></div><label class="control-label" for="studioColor">Base colour</label><div class="input-combo"><input type="color" id="studioColor" value="#a86dd6"><input id="studioHex" value="#A86DD6" maxlength="7"><button id="shuffleColor" aria-label="Random color">⤨</button></div></div>
-            <div class="control-block"><div class="control-title"><h3>Typography</h3><span>02</span></div><p class="control-subtitle">Make words feel right</p><label class="control-label" for="headingFont">Heading font</label><select id="headingFont"><option value="Playfair Display">Playfair Display</option><option value="DM Sans">DM Sans</option><option value="Space Grotesk">Space Grotesk</option><option value="Georgia">Georgia</option></select><label class="control-label" for="bodyFont">Body font</label><select id="bodyFont"><option value="DM Sans">DM Sans</option><option value="Playfair Display">Playfair Display</option><option value="Space Grotesk">Space Grotesk</option><option value="Arial">Arial</option></select><div class="font-size-row"><label class="control-label" for="fontSize">Type size <strong id="fontSizeValue">42px</strong></label><input type="range" id="fontSize" min="32" max="58" value="42"></div><div class="font-style-row"><span>Style</span><button class="style-choice active" data-style="normal">Aa</button><button class="style-choice italic" data-style="italic">Aa</button><button class="style-choice bold" data-style="bold">Aa</button><button class="text-button copy-css" id="copyCss">Copy CSS</button></div></div>
-          </aside>
-        </div>
-      </section>
-
-      <section class="page about-page" id="about" data-page="about">
-        <p class="eyebrow">A NOTE FROM LUA</p><h2>About LUA</h2>
-        <div class="about-grid">
-          <article class="about-card harmony-card"><span class="about-spark">✳</span><p class="about-card-kicker">DESIGN BEGINS WITH HARMONY</p><p>A little color, the right typography, and a whole new visual experience.</p><div class="about-mini-wheel"><i></i><i></i></div></article>
-          <article class="about-card lua-card"><span class="about-index">01 / ABOUT LUA</span><h3>What is LUA?</h3><p>LUA is a creative tool designed to help UI/UX designers discover beautiful color combinations and font pairings. It brings color and typography together to make the design process simpler and more inspiring.</p></article>
-          <article class="about-card purpose-card"><span class="about-index">02 / WHY WE’RE HERE</span><h3>Our purpose</h3><p>We believe great design is not just about choosing colors. It’s about creating balance, readability, and visual harmony.</p></article>
-          
-          <article class="about-card explore-card"><span class="about-index">03 / MAKE SOMETHING</span><h3>What can you explore?</h3><div class="about-features"><div><strong>Colour harmony</strong><span>Discover complementary color combinations.</span></div><div><strong>Typography</strong><span>Explore fonts that work beautifully together.</span></div><div><strong>Live preview</strong><span>See your design choices in action.</span></div><div><strong>Creative inspiration</strong><span>Find fresh ideas for your next project.</span></div></div></article>
-        </div>
-        <div class="about-credit"><span>Made for people who make things.</span></div>
-      </section>
-    </main>
-    <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  </div>
-  <script src="script.js"></script>
-</body>
-</html>
+  <aside class="right">
+    <header class="profile"><div class="avatar">S</div><div><b>Sanjay K</b><small>Free Plan</small></div><button class="profile-arrow">⌄</button></header>
+    <div class="right-content">
+      <section class="card"><div class="card-title"><h3>Sources</h3><b class="count" id="sourceCount">0</b></div><p id="sourceSummary">No documents uploaded</p><button class="view-sources" id="viewSources">View all sources <span>›</span></button></section>
+      <section class="card"><h3>Recent Sources</h3><div id="recentSources" class="recent"><p class="empty">Your selected files will appear here.</p></div></section>
+    </div>
+  </aside>
+</div>
+<input id="fileInput" type="file" accept=".pdf,.docx,.txt,.md" multiple hidden>
+<script src="index.js"></script>
+</body></html>
   
